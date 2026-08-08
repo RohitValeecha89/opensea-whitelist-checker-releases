@@ -1,13 +1,13 @@
-OpenSea Whitelist Checker v0.3.4
+OpenSea Whitelist Checker v0.3.5
 Installation and Usage Instructions
 ===================================
 
-1. DOWNLOAD V0.3.4
+1. DOWNLOAD V0.3.5
 
 1. Open:
-   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.4
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.5
 2. Scroll to Assets.
-3. Click OpenSea-Whitelist-Checker-Setup-0.3.4.exe.
+3. Click OpenSea-Whitelist-Checker-Setup-0.3.5.exe.
 4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
@@ -20,7 +20,7 @@ internally by automatic updates.
 2. If Windows SmartScreen appears:
    a. Click More info.
    b. Confirm the filename is:
-      OpenSea-Whitelist-Checker-Setup-0.3.4.exe
+      OpenSea-Whitelist-Checker-Setup-0.3.5.exe
    c. Click Run anyway.
 3. Complete the installer.
 4. Open OpenSea Whitelist Checker.
@@ -138,7 +138,7 @@ remains open, so an already authenticated wallet normally does not sign again.
 
 9. UNDERSTAND THE RESULTS
 
-Each row represents a wallet. Each phase has its own column.
+Each row represents a wallet. Each phase has its own column. Phases are shown in chronological mint order, and wallet allowances are matched to OpenSea's phase UUID rather than response position.
 
 - A green check mark with 1 means the wallet is eligible, usually with one
   remaining mint.
