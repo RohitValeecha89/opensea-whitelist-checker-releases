@@ -1,13 +1,13 @@
-OpenSea Whitelist Checker v0.3.5
+OpenSea Whitelist Checker v0.3.6
 Installation and Usage Instructions
 ===================================
 
-1. DOWNLOAD V0.3.5
+1. DOWNLOAD V0.3.6
 
 1. Open:
-   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.5
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.6
 2. Scroll to Assets.
-3. Click OpenSea-Whitelist-Checker-Setup-0.3.5.exe.
+3. Click OpenSea-Whitelist-Checker-Setup-0.3.6.exe.
 4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
@@ -20,7 +20,7 @@ internally by automatic updates.
 2. If Windows SmartScreen appears:
    a. Click More info.
    b. Confirm the filename is:
-      OpenSea-Whitelist-Checker-Setup-0.3.5.exe
+      OpenSea-Whitelist-Checker-Setup-0.3.6.exe
    c. Click Run anyway.
 3. Complete the installer.
 4. Open OpenSea Whitelist Checker.
@@ -132,8 +132,9 @@ Only genuine opensea.io collection links are accepted.
 
 The application authenticates each wallet with OpenSea using a locally signed
 login message. It requests only the read:eligibility scope and does not submit
-a transaction or mint anything. The read-only session is reused while the app
-remains open, so an already authenticated wallet normally does not sign again.
+a transaction or mint anything. The read-only token is revoked automatically after every wallet check, including
+failed eligibility requests. This prevents OpenSea's 25 scoped-token limit from
+accumulating across checks.
 
 
 9. UNDERSTAND THE RESULTS
