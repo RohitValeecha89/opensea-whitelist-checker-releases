@@ -1,14 +1,14 @@
-OpenSea Whitelist Checker v0.2.1
+OpenSea Whitelist Checker v0.3.0
 Installation and Usage Instructions
 ===================================
 
-1. DOWNLOAD V0.2.0
+1. DOWNLOAD V0.3.0
 
 1. Open:
-   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.2.1
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.0
 2. Scroll to Assets.
 3. Click OpenSea-Whitelist-Checker-Setup-0.2.1.exe.
-4. Wait for the approximately 96 MB download to finish.
+4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
 internally by automatic updates.
@@ -169,3 +169,18 @@ When an update is available:
 
 You can also open Settings and click Check for updates. GitHub login and tokens
 are not required.
+
+
+11. COLLECTION PNL
+
+1. Open PnL.
+2. Enter an OpenSea collection URL, collection slug, or contract address.
+3. Leave Chain on Auto-detect, or select the chain if address detection fails.
+4. Choose All wallets, Whole group, or Select wallets.
+5. Optionally enter a card username and upload a PNG/JPEG/WebP PFP under 5 MB.
+6. Click Generate PnL card.
+7. Use Copy image or Download PNG.
+
+PnL is an OpenSea-only FIFO estimate. It excludes gas, incomplete mint cost,
+unpriced private transfers, unsupported cross-currency conversion, and history
+not returned by OpenSea. Private keys are not decrypted or used for PnL.
