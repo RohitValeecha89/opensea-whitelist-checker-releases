@@ -7,7 +7,7 @@ Installation and Usage Instructions
 1. Open:
    https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.0
 2. Scroll to Assets.
-3. Click OpenSea-Whitelist-Checker-Setup-0.2.1.exe.
+3. Click OpenSea-Whitelist-Checker-Setup-0.3.0.exe.
 4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
@@ -20,7 +20,7 @@ internally by automatic updates.
 2. If Windows SmartScreen appears:
    a. Click More info.
    b. Confirm the filename is:
-      OpenSea-Whitelist-Checker-Setup-0.2.1.exe
+      OpenSea-Whitelist-Checker-Setup-0.3.0.exe
    c. Click Run anyway.
 3. Complete the installer.
 4. Open OpenSea Whitelist Checker.
