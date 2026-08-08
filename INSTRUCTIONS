@@ -1,0 +1,171 @@
+OpenSea Whitelist Checker v0.2.0
+Installation and Usage Instructions
+===================================
+
+1. DOWNLOAD V0.2.0
+
+1. Open:
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.2.0
+2. Scroll to Assets.
+3. Click OpenSea-Whitelist-Checker-Setup-0.2.0.exe.
+4. Wait for the approximately 96 MB download to finish.
+
+Do not download latest.yml or the .blockmap file. Those files are used
+internally by automatic updates.
+
+
+2. INSTALL THE APPLICATION
+
+1. Double-click the downloaded EXE file.
+2. If Windows SmartScreen appears:
+   a. Click More info.
+   b. Confirm the filename is:
+      OpenSea-Whitelist-Checker-Setup-0.2.0.exe
+   c. Click Run anyway.
+3. Complete the installer.
+4. Open OpenSea Whitelist Checker.
+
+The SmartScreen warning may appear because the installer is not yet code-signed.
+
+
+3. OBTAIN AN OPENSEA API KEY
+
+1. Sign in to your OpenSea account.
+2. Open OpenSea's developer/API section.
+3. Create or request an API key.
+4. Copy the key and keep it private.
+
+Every person using the checker should use their own OpenSea API key. Do not
+share the API key publicly.
+
+
+4. ADD THE OPENSEA API KEY
+
+1. Open Settings in the application.
+2. Find OpenSea API key.
+3. Paste your API key.
+4. Leave Concurrent wallet checks at 3 initially.
+5. Click Save settings.
+6. Confirm that the API key shows as saved.
+
+If OpenSea reports rate-limit errors, lower concurrency to 1 or 2.
+
+
+5. ADD RPC URLS
+
+RPCs are currently optional for eligibility checks. The OpenSea API performs
+the main whitelist check, but RPCs can be saved for chain diagnostics and
+future features.
+
+Enter one RPC per line in Settings using:
+
+chain=https://your-rpc-url
+
+Example:
+
+ethereum=https://your-ethereum-rpc
+base=https://your-base-rpc
+polygon=https://your-polygon-rpc
+arbitrum=https://your-arbitrum-rpc
+optimism=https://your-optimism-rpc
+
+Important:
+- Do not include spaces before the chain name.
+- Every line must contain an equals sign.
+- Use the chain slug expected by OpenSea.
+- Keep RPC provider API keys private.
+
+Click Save settings after adding the RPC URLs.
+
+
+6. IMPORT WALLETS
+
+SECURITY WARNING:
+Only import dedicated, low-value mint wallets. Do not import treasury wallets,
+hardware-wallet seed wallets, or wallets containing valuable assets.
+
+1. Open Wallets.
+2. Under Import private keys, enter a Group name such as Mint Wallets.
+3. Paste one private key per line.
+4. Each key must contain 0x followed by 64 hexadecimal characters.
+5. Click Encrypt & import.
+6. Review Imported, Duplicates, and Invalid lines.
+
+After import, the app displays wallet addresses, not private keys. Keys are
+encrypted locally using Windows encryption and cannot be displayed again from
+the app.
+
+
+7. ADD OR DISCOVER AN OPENSEA DROP
+
+Automatic discovery:
+
+1. Open Drops.
+2. Click Discover.
+3. Wait for OpenSea drops to load.
+4. Find the collection you want.
+5. Click Check ->.
+
+Manual entry:
+
+1. Open the collection on OpenSea.
+2. Copy its collection URL, for example:
+   https://opensea.io/collection/example-collection/overview
+3. Return to the app and open Drops.
+4. Paste the URL into Paste an OpenSea collection link or slug.
+5. Click Add drop.
+6. When the collection appears, click Check ->.
+
+You may also enter only the collection slug, such as:
+
+example-collection
+
+Only genuine opensea.io collection links are accepted.
+
+
+8. CHECK WHITELIST ELIGIBILITY
+
+1. Open Checker.
+2. Paste an OpenSea collection link, enter its slug, or select a saved drop.
+3. Under Wallets, select All wallets or a specific wallet group.
+4. Click Check.
+5. Wait for the progress bar to finish.
+
+The application authenticates each wallet with OpenSea using a locally signed
+login message. It requests only the read:eligibility scope and does not submit
+a transaction or mint anything.
+
+
+9. UNDERSTAND THE RESULTS
+
+Each row represents a wallet. Each phase has its own column.
+
+- A green check mark with 1 means the wallet is eligible, usually with one
+  remaining mint.
+- A green check mark with 2 means it may mint two, depending on OpenSea's
+  returned allowance.
+- A dash means the wallet is not eligible for that phase or has no remaining
+  allowance.
+- Error means that wallet could not be checked.
+
+Hover over Error to view the message. Common causes include:
+- Invalid or expired OpenSea API key
+- OpenSea rate limiting
+- Drop not found
+- Eligibility endpoint unavailable
+- Collection not using an OpenSea-supported drop configuration
+
+
+10. AUTOMATIC UPDATES
+
+The app checks for updates shortly after opening.
+
+When an update is available:
+
+1. A Version X is available banner appears.
+2. Click Download update.
+3. Wait for the download to finish.
+4. Click Restart & install.
+
+You can also open Settings and click Check for updates. GitHub login and tokens
+are not required.
