@@ -1,13 +1,13 @@
-OpenSea Whitelist Checker v0.3.3
+OpenSea Whitelist Checker v0.3.4
 Installation and Usage Instructions
 ===================================
 
-1. DOWNLOAD V0.3.3
+1. DOWNLOAD V0.3.4
 
 1. Open:
-   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.3
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.4
 2. Scroll to Assets.
-3. Click OpenSea-Whitelist-Checker-Setup-0.3.3.exe.
+3. Click OpenSea-Whitelist-Checker-Setup-0.3.4.exe.
 4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
@@ -20,7 +20,7 @@ internally by automatic updates.
 2. If Windows SmartScreen appears:
    a. Click More info.
    b. Confirm the filename is:
-      OpenSea-Whitelist-Checker-Setup-0.3.3.exe
+      OpenSea-Whitelist-Checker-Setup-0.3.4.exe
    c. Click Run anyway.
 3. Complete the installer.
 4. Open OpenSea Whitelist Checker.
@@ -44,18 +44,16 @@ share the API key publicly.
 1. Open Settings in the application.
 2. Find OpenSea API key.
 3. Paste your API key.
-4. Leave Concurrent wallet checks at the default value of 2 initially.
-5. Click Save settings.
-6. Confirm that the API key shows as saved.
+4. Click Save settings.
+5. Confirm that the API key shows as saved.
 
-The app automatically retries temporary OpenSea rate limits. If errors persist, lower concurrency to 1.
+Wallet checks always run one at a time. This limit is fixed to reduce OpenSea rate-limit failures.
 
 
 5. ADD RPC URLS
 
-RPCs are currently optional for eligibility checks. The OpenSea API performs
-the main whitelist check, but RPCs can be saved for chain diagnostics and
-future features.
+RPCs are optional for eligibility checks, but an RPC for the collection chain
+is required for complete ERC-721 mint counts in PnL cards.
 
 Enter one RPC per line in Settings using:
 
@@ -129,11 +127,13 @@ Only genuine opensea.io collection links are accepted.
 2. Paste an OpenSea collection link, enter its slug, or select a saved drop.
 3. Under Wallets, select All wallets or a specific wallet group.
 4. Click Check.
-5. Wait for the progress bar to finish.
+5. The selected wallets appear immediately with Waiting status.
+6. Watch each row update as that wallet is checked.
 
 The application authenticates each wallet with OpenSea using a locally signed
 login message. It requests only the read:eligibility scope and does not submit
-a transaction or mint anything.
+a transaction or mint anything. The read-only session is reused while the app
+remains open, so an already authenticated wallet normally does not sign again.
 
 
 9. UNDERSTAND THE RESULTS
@@ -181,6 +181,13 @@ are not required.
 6. Click Generate PnL card.
 7. Use Copy image or Download PNG.
 
-PnL is an OpenSea-only FIFO estimate. It excludes gas, incomplete mint cost,
-unpriced private transfers, unsupported cross-currency conversion, and history
-not returned by OpenSea. Private keys are not decrypted or used for PnL. PnL generation continues when you switch tabs, and the latest card remains visible when you return. The app uses one shared collection-history scan plus per-wallet ownership checks to reduce rate limiting.
+PnL uses wallet-scoped OpenSea history for buys and sales, avoiding the old
+collection-wide 10,000-event cap. ERC-721 mint counts are verified directly
+from on-chain Transfer logs through the configured chain RPC. Add that RPC in
+Settings before generating the card. ERC-1155 mint verification is not yet
+supported.
+
+PnL remains a FIFO estimate and excludes gas, unknown mint cost, unpriced
+private transfers, and unsupported cross-currency conversion. Private keys are
+not decrypted or used for PnL. Generation continues when switching tabs, and
+the latest card remains visible on return.
