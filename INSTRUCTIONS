@@ -1,13 +1,13 @@
-OpenSea Whitelist Checker v0.3.0
+OpenSea Whitelist Checker v0.3.1
 Installation and Usage Instructions
 ===================================
 
-1. DOWNLOAD V0.3.0
+1. DOWNLOAD V0.3.1
 
 1. Open:
-   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.0
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.1
 2. Scroll to Assets.
-3. Click OpenSea-Whitelist-Checker-Setup-0.3.0.exe.
+3. Click OpenSea-Whitelist-Checker-Setup-0.3.1.exe.
 4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
@@ -20,7 +20,7 @@ internally by automatic updates.
 2. If Windows SmartScreen appears:
    a. Click More info.
    b. Confirm the filename is:
-      OpenSea-Whitelist-Checker-Setup-0.3.0.exe
+      OpenSea-Whitelist-Checker-Setup-0.3.1.exe
    c. Click Run anyway.
 3. Complete the installer.
 4. Open OpenSea Whitelist Checker.
@@ -44,11 +44,11 @@ share the API key publicly.
 1. Open Settings in the application.
 2. Find OpenSea API key.
 3. Paste your API key.
-4. Leave Concurrent wallet checks at 3 initially.
+4. Leave Concurrent wallet checks at the default value of 2 initially.
 5. Click Save settings.
 6. Confirm that the API key shows as saved.
 
-If OpenSea reports rate-limit errors, lower concurrency to 1 or 2.
+The app automatically retries temporary OpenSea rate limits. If errors persist, lower concurrency to 1.
 
 
 5. ADD RPC URLS
@@ -148,7 +148,7 @@ Each row represents a wallet. Each phase has its own column.
   allowance.
 - Error means that wallet could not be checked.
 
-Hover over Error to view the message. Common causes include:
+Hover over Error to view the message. If some rows fail, click Retry failed wallets to retry only those rows. Common causes include:
 - Invalid or expired OpenSea API key
 - OpenSea rate limiting
 - Drop not found
