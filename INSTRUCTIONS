@@ -1,13 +1,13 @@
-OpenSea Whitelist Checker v0.3.6
+OpenSea Whitelist Checker v0.4.0
 Installation and Usage Instructions
 ===================================
 
-1. DOWNLOAD V0.3.6
+1. DOWNLOAD V0.4.0
 
 1. Open:
-   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.3.6
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.4.0
 2. Scroll to Assets.
-3. Click OpenSea-Whitelist-Checker-Setup-0.3.6.exe.
+3. Click OpenSea-Whitelist-Checker-Setup-0.4.0.exe.
 4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
@@ -20,7 +20,7 @@ internally by automatic updates.
 2. If Windows SmartScreen appears:
    a. Click More info.
    b. Confirm the filename is:
-      OpenSea-Whitelist-Checker-Setup-0.3.6.exe
+      OpenSea-Whitelist-Checker-Setup-0.4.0.exe
    c. Click Run anyway.
 3. Complete the installer.
 4. Open OpenSea Whitelist Checker.
@@ -50,7 +50,16 @@ share the API key publicly.
 Wallet checks always run one at a time. This limit is fixed to reduce OpenSea rate-limit failures.
 
 
-5. ADD RPC URLS
+5. ADD ETHERSCAN API KEYS
+
+Ethereum PnL uses Etherscan V2 transaction and ERC-721 history. Create one or
+more Etherscan API keys, then open Settings and paste one key per line under
+Etherscan API keys. Click Save settings. Keys are encrypted locally and the app
+automatically rotates/fails over between them when Etherscan limits a request.
+Leave the field blank later to keep the saved keys.
+
+
+6. ADD RPC URLS
 
 RPCs are optional for eligibility checks, but an RPC for the collection chain
 is required for complete ERC-721 mint counts in PnL cards.
@@ -76,7 +85,7 @@ Important:
 Click Save settings after adding the RPC URLs.
 
 
-6. IMPORT WALLETS
+7. IMPORT WALLETS
 
 SECURITY WARNING:
 Only import dedicated, low-value mint wallets. Do not import treasury wallets,
@@ -94,7 +103,7 @@ encrypted locally using Windows encryption and cannot be displayed again from
 the app.
 
 
-7. ADD OR DISCOVER AN OPENSEA DROP
+8. ADD OR DISCOVER AN OPENSEA DROP
 
 Automatic discovery:
 
@@ -121,7 +130,7 @@ example-collection
 Only genuine opensea.io collection links are accepted.
 
 
-8. CHECK WHITELIST ELIGIBILITY
+9. CHECK WHITELIST ELIGIBILITY
 
 1. Open Checker.
 2. Paste an OpenSea collection link, enter its slug, or select a saved drop.
@@ -137,7 +146,7 @@ failed eligibility requests. This prevents OpenSea's 25 scoped-token limit from
 accumulating across checks.
 
 
-9. UNDERSTAND THE RESULTS
+10. UNDERSTAND THE RESULTS
 
 Each row represents a wallet. Each phase has its own column. Phases are shown in chronological mint order, and wallet allowances are matched to OpenSea's phase UUID rather than response position.
 
@@ -157,7 +166,7 @@ Hover over Error to view the message. If some rows fail, click Retry failed wall
 - Collection not using an OpenSea-supported drop configuration
 
 
-10. AUTOMATIC UPDATES
+11. AUTOMATIC UPDATES
 
 The app checks for updates shortly after opening.
 
@@ -172,7 +181,7 @@ You can also open Settings and click Check for updates. GitHub login and tokens
 are not required.
 
 
-11. COLLECTION PNL
+12. COLLECTION PNL
 
 1. Open PnL.
 2. Enter an OpenSea collection URL, collection slug, or contract address.
