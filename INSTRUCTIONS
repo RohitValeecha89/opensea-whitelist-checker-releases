@@ -191,13 +191,24 @@ are not required.
 6. Click Generate PnL card.
 7. Use Copy image or Download PNG.
 
-PnL uses wallet-scoped OpenSea history for buys and sales, avoiding the old
-collection-wide 10,000-event cap. ERC-721 mint counts are verified directly
-from on-chain Transfer logs through the configured chain RPC. Add that RPC in
-Settings before generating the card. ERC-1155 mint verification is not yet
-supported.
+For Ethereum collections, PnL uses paginated Etherscan V2 ERC-721 and normal
+transaction history, counts zero-address transfers as mints, and calculates NFT
+basis using the average known acquisition cost. Multiple configured Etherscan
+keys are rotated automatically. Gas remains excluded. For other EVM chains,
+the app clearly labels the result as an OpenSea estimate and can use the
+configured chain RPC to verify mint counts.
 
-PnL remains a FIFO estimate and excludes gas, unknown mint cost, unpriced
-private transfers, and unsupported cross-currency conversion. Private keys are
-not decrypted or used for PnL. Generation continues when switching tabs, and
-the latest card remains visible on return.
+Private keys are not decrypted or used for PnL. Generation continues when
+switching tabs, and the latest card remains visible on return.
+
+
+13. MINTING NOW
+
+1. Open Minting Now.
+2. Review collections ranked by OpenSea mint events in the last 15 minutes.
+3. Each card shows image, price, recent mints, chain, and supply when available.
+4. MINT ON OPENSEA opens the official OpenSea page; the app never mints itself.
+5. CHECK WALLETS opens Checker with that collection selected.
+
+The list refreshes every 60 seconds. A dash is shown when OpenSea does not
+provide supply data; the app does not invent missing values.
