@@ -1,13 +1,13 @@
-OpenSea Whitelist Checker v0.4.0
+OpenSea Whitelist Checker v0.4.1
 Installation and Usage Instructions
 ===================================
 
-1. DOWNLOAD V0.4.0
+1. DOWNLOAD V0.4.1
 
 1. Open:
-   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.4.0
+   https://github.com/RohitValeecha89/opensea-whitelist-checker-releases/releases/tag/v0.4.1
 2. Scroll to Assets.
-3. Click OpenSea-Whitelist-Checker-Setup-0.4.0.exe.
+3. Click OpenSea-Whitelist-Checker-Setup-0.4.1.exe.
 4. Wait for the approximately 100 MB download to finish.
 
 Do not download latest.yml or the .blockmap file. Those files are used
@@ -20,7 +20,7 @@ internally by automatic updates.
 2. If Windows SmartScreen appears:
    a. Click More info.
    b. Confirm the filename is:
-      OpenSea-Whitelist-Checker-Setup-0.4.0.exe
+      OpenSea-Whitelist-Checker-Setup-0.4.1.exe
    c. Click Run anyway.
 3. Complete the installer.
 4. Open OpenSea Whitelist Checker.
@@ -102,6 +102,9 @@ After import, the app displays wallet addresses, not private keys. Keys are
 encrypted locally using Windows encryption and cannot be displayed again from
 the app.
 
+To rename a wallet, click the pencil icon beside it, type the new name, and
+press Enter or click the check mark. The custom name is saved locally.
+
 
 8. ADD OR DISCOVER AN OPENSEA DROP
 
@@ -128,6 +131,9 @@ You may also enter only the collection slug, such as:
 example-collection
 
 Only genuine opensea.io collection links are accepted.
+
+To remove a manually saved collection, click the X delete button on its card in
+Drops. Automatically discovered drops are temporary and do not need deletion.
 
 
 9. CHECK WHITELIST ELIGIBILITY
